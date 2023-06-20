@@ -18,4 +18,5 @@ git config --global init.defaultbranch main
 git init
 git add .
 git commit
+git remote add origin url
 '''

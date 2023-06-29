@@ -14,5 +14,8 @@
     "python.defaultInterpreterPath": "python",
     "explorer.confirmDragAndDrop": false,
     "git.confirmSync": false,
-    "security.workspace.trust.untrustedFiles": "open"
+    "security.workspace.trust.untrustedFiles": "open",
+    "emmet.triggerExpansionOnTab": true,
+    "files.associations": {"*html": "html"},
+    "emmet.useInlineCompletions": true
 }

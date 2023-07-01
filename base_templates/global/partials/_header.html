@@ -10,39 +10,42 @@
   
         {% if user.is_authenticated %}
           <li class="menu-item">
-            <a href="{% url 'contact:create' %}" class="menu-link">Create</a>
+            <a href="{% url 'contact:create' %}" class="menu-link">Criar</a>
           </li>
           <li class="menu-item">
-            {% comment %} <a href="{% url 'contact:user_update' %}" class="menu-link">Profile</a> {% endcomment %}
+            \<a href="{% url 'contact:user_update' %}" class="menu-link">Perfil</a>
           </li>
           <li class="menu-item">
-            {% comment %} <a href="{% url 'contact:logout' %}" class="menu-link">Logout</a> {% endcomment %}
+            <a href="{% url 'contact:logout' %}" class="menu-link">Logout</a>
           </li>
-        {% comment %} {% else %} {% endcomment %}
+        {% else %}
           <li class="menu-item">
-            {% comment %} <a href="{% url 'contact:login' %}" class="menu-link">Login</a> {% endcomment %}
+            <a href="{% url 'contact:login' %}" class="menu-link">Login</a>
           </li>      
           <li class="menu-item">
-            <a href="{% url 'contact:register' %}" class="menu-link">Register</a>
+            <a href="{% url 'contact:register' %}" class="menu-link">Registrar</a>
           </li>      
         {% endif %}
       
       </ul>
     </nav>
-  
-    <div class="search">
-      <form 
-        action="{% url 'contact:search' %}" 
-        method="GET"
-      >
-        <input 
-          type="search" 
-          class="search-input"
-          placeholder="Search"
-          id="search"
-          name="q"
-          value="{{ request.GET.q.strip }}"
+    
+    {% if user.is_authenticated %}
+      <div class="search">
+        <form 
+          action="{% url 'contact:search' %}" 
+          method="GET"
         >
-      </form>
-    </div>
+          <input 
+            type="search" 
+            class="search-input"
+            placeholder="Search"
+            id="search"
+            name="q"
+            value="{{ request.GET.q.strip }}"
+          >
+        </form>
+      </div>
+    {% endif %}
+    
   </header>

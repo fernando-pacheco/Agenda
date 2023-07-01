@@ -1,6 +1,6 @@
 # Agenda
 
-Iniciar o projeto Django
+Iniciar o projeto Django - Windows
 
 ```
 python -m venv venv
